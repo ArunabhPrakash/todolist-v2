@@ -26,3 +26,45 @@
   </div>
 
 <%- include("footer") -%>
+/*
+The code you provided is an EJS template that is included in the "list" view. It displays the list title, the list items, and a form to add new items. Here's a breakdown of the code:
+1. `<%- include("header") -%>`:
+   - This line includes the "header" partial, which typically contains the HTML code for the header section of the web page.
+2. `<div class="box" id="heading">`:
+   - This div element contains the heading section of the list view.
+3. `<h1> <%= listTitle %> </h1>`:
+   - This line displays the list title dynamically using the `listTitle` variable passed to the view.
+4. `</div>`:
+   - This closes the heading div element.
+5. `<div class="box">`:
+   - This div element contains the main content section of the list view.
+6. `<%  newListItems.forEach(function(item){ %>`:
+   - This is a loop that iterates over each item in the `newListItems` array and executes the code inside the loop for each item.
+7. `<form action="/delete" method="post">`:
+   - This form element is used to delete an item from the list. It submits a POST request to the "/delete" route when the checkbox is changed.
+8. `<div class="item">`:
+   - This div element represents an individual item in the list.
+9. `<input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">`:
+   - This checkbox allows the user to select the item for deletion. The value attribute is set to the ID of the item, and the `onChange` event triggers the form submission.
+10. `<p><%=item.name%></p>`:
+    - This line displays the name of the item using the `item.name` variable.
+11. `</div>`:
+    - This closes the item div element.
+12. `<input type="hidden" name="listName" value="<%= listTitle %>"></input>`:
+    - This hidden input field stores the value of the list title, which is passed along with the form submission.
+13. `</form>`:
+    - This closes the delete form.
+14. `<form class="item" action="/" method="post">`:
+    - This form element is used to add a new item to the list. It submits a POST request to the root URL ("/") when the form is submitted.
+15. `<input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus ="true">`:
+    - This input field allows the user to enter a new item. The `name` attribute is set to "newItem".
+16. `<button type="submit" name="list" value="<%= listTitle %>">+</button>`:
+    - This button submits the form and adds the new item to the list. The `name` attribute is set to "list" with a value equal to the list title.
+17. `</form>`:
+    - This closes the add item form.
+18. `</div>`:
+    - This closes the main content div element.
+19. `<%- include("footer") -%>`:
+    - This line includes the "footer" partial, which typically contains the HTML code for the footer section of the web page.
+The template dynamically renders the list title, items, and forms based on the data passed to it from the server.
+*/
