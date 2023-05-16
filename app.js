@@ -31,7 +31,7 @@ The code you provided is a Node.js application using Express framework and Mongo
     - This route handler handles GET requests to URLs with a custom list name. It finds the corresponding list in the database and renders the "list" view with the items of that list.
 15. `app.post("/", function(req, res) { ... });`:
     - This route handler handles POST requests to the root URL ("/"). It creates a new item based on the form input and saves it to the database. If the item is added to the "Today" list, the user is redirected to the root URL. Otherwise, the user is redirected to the custom list URL.
-16. `app.post("/delete",
+16. `app.post("/delete", 
 */
 const express = require("express");
 const bodyParser = require("body-parser");
